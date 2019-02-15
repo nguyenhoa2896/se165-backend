@@ -2,7 +2,6 @@ import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
-
 const prodConfig = {
   apiKey: process.env.REACT_APP_PROD_API_KEY,
   authDomain: process.env.REACT_APP_PROD_AUTH_DOMAIN,
@@ -34,28 +33,41 @@ class Firebase {
   }
 
 
-  // Auth API
+  //TODO Auth API
 
-  //Sign Up
-  doCreateUserWithEmailAndPassword = (email, password) =>
-    this.auth.createUserWithEmailAndPassword(email, password);
-  //Sign In
-  doSignInWithEmailAndPassword = (email, password) =>
-    this.auth.signInWithEmailAndPassword(email, password);
-  //Sign Out
-  doSignOut = () => this.auth.signOut();
-  //Password Forgot
-  doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
-  //Password Update
-  doPasswordUpdate = password =>
-    this.auth.currentUser.updatePassword(password);
+  /*
+  * @todo Google Single Sign-up
+  * @body Create user with Google account function
+  * DueDay: Sunday 2/17/2019
+  * the format is
+  *   apiFunction = (parameter) =>
+      this.auth.firebasefunctiontoSignUpwithGoogle(parameter);
+  *
+   */
+
+
+   /*
+   * @todo Google Single Sign-In
+   * @body Log In user with Google account function
+   * DueDay: Sunday 2/17/2019
+   * the format is
+   *   apiFunction = (parameter) =>
+       this.auth.firebasefunctiontoSignUpwithGoogle(parameter);
+   *
+    */
+
+    /*
+    * @todo Google Single Sign-up
+    * @body Log user from Google account function
+    * DueDay: Sunday 2/17/2019
+    * the format is
+    *   apiFunction = (parameter) =>
+        this.auth.firebasefunctiontoSignUpwithGoogle(parameter);
+    *
+     */
 
   // User API
-  user = uid => this.database.ref(`users/${uid}`);
 
-  users = () => this.database.ref('users');
-
-  messags = () => this.database.ref('messages');
 }
 
 export default Firebase;
