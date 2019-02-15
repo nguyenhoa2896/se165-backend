@@ -104,3 +104,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# dependencies
+/node_modules
+
+
+package-lock.json
+.idea/vcs.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/se165-backend.iml
